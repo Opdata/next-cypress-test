@@ -29,14 +29,14 @@ describe("home page", () => {
   })
 
   it("the h1 contains the correct text", () => {
-    cy.get("[data-test='hero-heading']").contains(
+    cy.getByData("hero-heading").contains(
       "Testing Next.js Applications with Cypress"
     ) // 기존 h1 선택방식에서 data-test 선택으로 방식 변경
   })
 
-  it("the features on the homepage are correct", () => {
-    cy.get("dt").eq(0).contains("4 Courses") // dt요소 중 0번째 요소 액세스 후 4 courses 텍스트 포함 확인
-  })
+  //   it("the features on the homepage are correct", () => {
+  //     cy.get("dt").eq(0).contains("4 Courses") // dt요소 중 0번째 요소 액세스 후 4 courses 텍스트 포함 확인
+  //   })
 })
 
 export {}
