@@ -18,6 +18,8 @@ describe("User Journey", () => {
       "eq",
       "/testing-your-first-application/installing-cypress-and-writing-our-first-test"
     )
+    cy.getByData("challenge-answer-0").click()
+    cy.getByData("next-lesson-button").click()
   })
 })
 
