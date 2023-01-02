@@ -22,7 +22,7 @@
 //   })
 // })
 
-describe("home page", () => {
+describe("Home page", () => {
   beforeEach(() => {
     cy.visit("http://localhost:3000")
   })
@@ -35,7 +35,30 @@ describe("home page", () => {
     })
 
     it("the features on the homepage are correct", () => {
-      cy.get("dt").eq(0).contains("4 Courses") // dt요소 중 0번째 요소 액세스 후 4 courses 텍스트 포함 확인
+      cy.get("dt").eq(0).contains("4 Courses")
+      cy.get("dt").eq(1).contains("25+ Lessons")
+      cy.get("dt").eq(2).contains("Free and Open Source")
+    })
+  })
+
+  context("Courses section", () => {
+    it("Course: Testing Your First Next.js Application", () => {
+      cy.getByData("course-0").find("a").eq(3).click() // data-set이 course-0인 요소에 접근하고 a element를 찾고 3번째 요소에 접근하고 클릭
+      cy.location("pathname").should("eq", "/testing-your-first-application") // 경로가 /testing-your ... 이랑 같은지 확인
+    })
+  })
+
+  context("Courses section", () => {
+    it("Course: Testing Foundations", () => {
+      cy.getByData("course-1").find("a").eq(3).click() // data-set이 course-0인 요소에 접근하고 a element를 찾고 3번째 요소에 접근하고 클릭
+      cy.location("pathname").should("eq", "/testing-foundations") // 경로가 /testing ... 이랑 같은지 확인
+    })
+  })
+
+  context("Courses section", () => {
+    it("Course: Cypress Fundamentals", () => {
+      cy.getByData("course-2").find("a").eq(3).click() // data-set이 course-0인 요소에 접근하고 a element를 찾고 3번째 요소에 접근하고 클릭
+      cy.location("pathname").should("eq", "/cypress-fundamentals") // 경로가 /cypress ... 이랑 같은지 확인
     })
   })
 })
