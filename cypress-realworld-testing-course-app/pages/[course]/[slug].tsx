@@ -24,27 +24,30 @@ import {
   getToCForMarkdown,
 } from "../../utils/mdxUtils"
 import { isLessonCompleted } from "../../utils/machineUtils"
+import CompleteLessonBtn from "../../components/Lesson/CompleteLessonBtn"
+import NextLessonBtn from "../../components/Lesson/NextLessonBtn"
+import SkipChallenge from "../../components/Lesson/SkipChallenge"
 
-const NextLessonBtn = dynamic(
-  () => import("../../components/Lesson/NextLessonBtn"),
-  {
-    ssr: false,
-  }
-)
+// const NextLessonBtn = dynamic(
+//   () => import("../../components/Lesson/NextLessonBtn"),
+//   {
+//     ssr: false,
+//   }
+// )
 
-const CompleteLessonBtn = dynamic(
-  () => import("../../components/Lesson/CompleteLessonBtn"),
-  {
-    ssr: false,
-  }
-)
+// const CompleteLessonBtn = dynamic(
+//   () => import("../../components/Lesson/CompleteLessonBtn"),
+//   {
+//     ssr: false,
+//   }
+// )
 
-const SkipChallenge = dynamic(
-  () => import("../../components/Lesson/SkipChallenge"),
-  {
-    ssr: false,
-  }
-)
+// const SkipChallenge = dynamic(
+//   () => import("../../components/Lesson/SkipChallenge"),
+//   {
+//     ssr: false,
+//   }
+// )
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
